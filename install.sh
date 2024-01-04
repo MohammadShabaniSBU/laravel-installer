@@ -14,6 +14,7 @@ composer require laravel/octane
 composer require laravel/telescope
 
 php artisan octane:install
+1
 php artisan telescope:install
 
 yarn add chkidar
