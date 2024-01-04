@@ -17,3 +17,5 @@ php artisan telescope:install
 
 yarn add chokidar
 
+rm -rf temp
+
