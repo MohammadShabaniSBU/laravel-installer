@@ -15,5 +15,5 @@ composer require laravel/telescope
 
 php artisan telescope:install
 
-yarn add chkidar
+yarn add chokidar
 
