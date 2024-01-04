@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    image: ghcr.io/mohammadshabanisbu/laravel-octane-docker:8.2-dev
+    container_name: ${APP_NAME}
+    restart: always
+    networks:
+      - mysql-network
+      - traefik-network
+    working_dir: /app
+    volumes:
+      - .:/app
+      - .docker/supervisord.conf:/etc/supervisord.conf
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${APP_NAME}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.docker.network=traefik-network"
+
+networks:
+  mysql-network:
+    external: true
+  traefik-network:
+    external: true
